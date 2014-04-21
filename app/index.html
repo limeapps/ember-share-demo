@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EmberShare</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+      window.ENV = {{ENV}};
+      document.write('<base href="' + ENV.rootURL + '" />');
+    </script>
+    <link href='http://fonts.googleapis.com/css?family=Lobster+Two:400italic,700italic|Open+Sans:600italic,400italic,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/app.css">
+    <script src="assets/app.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript" src="assets/js/fastclick.js"></script>
+    <!-- BrowserChannel //-->
+    <!-- <script type="text/javascript" src="assets/js/bcsocket-uncompressed.js"></script> //-->
+
+    <!-- Primus //-->
+    <script type="text/javascript" src="assets/js/primus.js"></script>
+    <script type="text/javascript" src="assets/js/share.uncompressed.js"></script>
+    <script>
+      window.EmberShareDemo = require('ember-share-demo/main')['default']('ember-share-demo');
+      FastClick.attach(document.body);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<div class="todo">
+	<section class="todo-box">
+		<div class="todo-head">
+			{{input type="text" value=newItem class="new-item" placeholder="Add a todo item" autofocus="true"}}
+		</div>
+		<ul class="todo-list">
+		{{#each items}}
+			<li>
+				<label {{bind-attr class="done:checked"}} >{{input type="checkbox" class="item-done" checked=done}} {{title}}</label>
+				<button {{action deleteItem this}}></button>
+			</li>
+		{{/each}}
+		</ul>
+	</section>
+</div>
+	

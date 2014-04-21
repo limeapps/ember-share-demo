@@ -1,0 +1,19 @@
+<div {{bind-attr class=":messages modal:modal-blurred showChat::blurred"}}>
+{{#each messages}}
+	<div {{bind-attr class=":bubble color"}}>
+		{{message}}
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="20" height="22" enable-background="new 0 0 20 22" xml:space="preserve"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.1 0L7 0.5v11.6H7c0 4.4-2.9 8.2-7 9.5C1.3 21.8 2.6 22 4 22c8.8 0 16-6.3 16-14C20 5 18.9 2.3 17.1 0z"></path></svg>
+	</div>
+{{/each}}
+</div>
+{{outlet}}
+<div class="msg-box">
+	<div class="msg-bubble">
+		{{textarea value=newMsg placeholder="Say something" rows="1"}}
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="36" height="44" enable-background="new 0 0 36 44" xml:space="preserve"><path fill-rule="evenodd" clip-rule="evenodd" fill="#FF8A5A" d="M30 29.8V-0.1h-14v22.5c-0.2 4.4-2 21.3-15.7 21.3 0 0 22.9 0.3 35.3-10.6L30 29.8z"/></svg>
+	</div>
+	<button class="msg-close" {{action hideInput}}>Done</button>
+</div>
+<button {{bind-attr class=":add-msg showChat::hidden"}} {{action showInput}}>
+	<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="118" height="88" enable-background="new 0 0 118 88" xml:space="preserve"><g id="bottom"><path fill-rule="evenodd" clip-rule="evenodd" fill="#FAFAFA" d="M58.12 87h-0.23c-9.74 0-18.72-3.27-25.92-8.76 -12.19 8.94-32.05 8.66-32.05 8.66 13.16 0 14.86-16.26 15.08-20.47V43.79h0.03c0.11-23.66 19.25-42.81 42.86-42.81h0.23c23.67 0 42.86 19.26 42.86 43.01C100.98 67.74 81.79 87 58.12 87z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#FF4C32" d="M58.12 1h-0.23C34.29 1 15.15 20 15.04 44H15v22.43c0 4.2-1.92 20.47-15.08 20.47 0 0 19.85 0.28 32.05-8.66C39.17 83.73 48.15 87 57.89 87h0.23c23.67 0 42.86-19.25 42.86-43C100.98 20.25 81.79 1 58.12 1zM58.12 85h-0.23c-9.01 0-17.55-2.89-24.71-8.35l-1.19-0.91 -1.21 0.89c-5.82 4.27-13.53 6.33-19.79 7.34 3.86-4.37 5.67-11.03 6.01-17.42l0-21.26 0.03-1.46C17.14 21.3 35.47 3 57.89 3h0.23c22.53 0 40.86 18.39 40.86 41C98.98 66.61 80.65 85 58.12 85z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#FF4C32" d="M75.02 43H60V27.98c0-0.55-0.45-1-1-1 -0.56 0-1 0.45-1 1V43H42.96c-0.55 0-1 0.45-1 1 0 0.55 0.45 1 1 1H58v15.04c0 0.56 0.45 1 1 1 0.55 0 1-0.45 1-1V45h15.02c0.56 0 1-0.45 1-1C76.02 43.45 75.57 43 75.02 43z"/></g><g id="top" display="none"><path display="inline" fill-rule="evenodd" clip-rule="evenodd" fill="#FF4C32" d="M58.12 87h-0.23c-9.74 0-18.72-3.27-25.92-8.76 -12.19 8.94-32.05 8.66-32.05 8.66 13.16 0 14.86-16.26 15.08-20.47V43.79h0.03c0.11-23.66 19.25-42.81 42.86-42.81h0.23c23.67 0 42.86 19.26 42.86 43.01C100.98 67.74 81.79 87 58.12 87z"/><path display="inline" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M75.02 43H60V27.98c0-0.55-0.45-1-1-1 -0.56 0-1 0.45-1 1V43H42.96c-0.55 0-1 0.45-1 1 0 0.55 0.45 1 1 1H58v15.04c0 0.56 0.45 1 1 1 0.55 0 1-0.45 1-1V45h15.02c0.56 0 1-0.45 1-1C76.02 43.45 75.57 43 75.02 43z"/></g></svg>
+</button>
