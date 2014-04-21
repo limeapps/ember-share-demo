@@ -6,6 +6,7 @@ Demo the [EmberShare](https://github.com/limeapps/ember-share) library, built us
 ```
 npm install
 bower install
+ember build
 node server
 ```
 
