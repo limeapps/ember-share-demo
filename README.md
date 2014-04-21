@@ -3,6 +3,8 @@ Demo the [EmberShare](https://github.com/limeapps/ember-share) library, built us
 
 ## Running
 
+Make that Mongodb and redis are running.
+
 ```
 npm install
 bower install
