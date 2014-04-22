@@ -6,6 +6,16 @@ export default Ember.View.extend({
 		return b+c*(-2*tc + 3*ts);
 	},
 	animInfo: {},
+	limit : function(){
+		Ember.run.scheduleOnce('afterRender',this,function(){
+			this.$().on('keyup blur paste','textarea',function(){
+				if(this.value.length > 256) { 
+					this.value = this.value.substr(0, 256);
+					return false;
+				}
+			});
+		});
+	}.on('didInsertElement'),
 	showModal : function(){
 		var modal = this.get('controller.modal');
 		if(this.state === "inDOM")
@@ -114,8 +124,7 @@ export default Ember.View.extend({
 				this.animInfo.begin = this.scrollEl.scrollTop;
 				this.animInfo.change = this.animInfo.max  - this.scrollEl.scrollTop;
 				if(this.animInfo.change > 0) {
-					Ember.run.once(this,'animate');
-					this.animate();
+					Ember.run.throttle(this,'animate',1000);
 				}
 			}
 		});

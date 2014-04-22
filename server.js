@@ -41,16 +41,16 @@ share = sharejs.server.createClient({
   backend: backend
 });
 // create initial docs 
-backend.fetch('room', '3',function(err,data){
+backend.fetch('room', '4',function(err,data){
   if(data.v === 0)
   {
-    backend.submit('room', '3', {create:{type:'json0', data:{count:0,messages:[{message:"Welcome to Ember-Share demo"}]}}}, function(err, version, transformedByOps, snapshot) {});
+    backend.submit('room', '4', {create:{type:'json0', data:{count:0,messages:[{message:"Welcome to Ember-Share demo"}]}}}, function(err, version, transformedByOps, snapshot) {});
   }
 });
-backend.fetch('todo', '3',function(err,data){
+backend.fetch('todo', '4',function(err,data){
   if(data.v === 0)
   {
-    backend.submit('todo', '3', {create:{type:'json0', data:{count:0,items:[{id:0,title:"Make a todo app",done:false}]}}}, function(err, version, transformedByOps, snapshot) {});
+    backend.submit('todo', '4', {create:{type:'json0', data:{count:0,items:[{id:0,title:"Make a todo app",done:false}]}}}, function(err, version, transformedByOps, snapshot) {});
   }
 });
 var primus = new Primus(webserver,{
