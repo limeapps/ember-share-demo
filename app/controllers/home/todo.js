@@ -25,7 +25,12 @@ export default Ember.ObjectController.extend({
 			if(newDoc)
 			{
 				this.newDoc = newDoc;
-				this.newDoc.set('title',this.get('newItem'));
+				var txt = this.get('newItem');
+				if (txt.length > 256)
+				{
+					txt = txt.substr(0, 256);
+				}
+				this.newDoc.set('title',txt);
 			}
 			else
 			{
@@ -34,7 +39,12 @@ export default Ember.ObjectController.extend({
 		}
 		else 
 		{
-			this.newDoc.set('title',this.get('newItem'));
+			var txt = this.get('newItem');
+			if (txt.length > 256)
+			{
+				txt = txt.substr(0, 256);
+			}
+			this.newDoc.set('title',txt);
 		}
 	}.observes('newItem'),
 	actions : {

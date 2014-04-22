@@ -276,6 +276,9 @@ h2 {
 		max-width: 26%;
 	}
 }
+.inner-bubble {
+	overflow:hidden;
+}
 .bubble-yellow {
 	background-image: linear-gradient(#ffcb70 0%, #f9dc67 calc(100% - 25px));
 	color: #985f00;

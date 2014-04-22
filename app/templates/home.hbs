@@ -1,7 +1,9 @@
 <div {{bind-attr class=":messages modal:modal-blurred showChat::blurred"}}>
 {{#each messages}}
 	<div {{bind-attr class=":bubble color"}}>
-		{{message}}
+		<div class="inner-bubble">
+			{{message}}
+		</div>
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="20" height="22" enable-background="new 0 0 20 22" xml:space="preserve"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.1 0L7 0.5v11.6H7c0 4.4-2.9 8.2-7 9.5C1.3 21.8 2.6 22 4 22c8.8 0 16-6.3 16-14C20 5 18.9 2.3 17.1 0z"></path></svg>
 	</div>
 {{/each}}
