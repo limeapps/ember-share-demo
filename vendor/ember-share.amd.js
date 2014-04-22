@@ -5,16 +5,14 @@ define("ember-share",
     var ShareTextMixin = __dependency1__["default"];
     var ShareProxy = __dependency2__["default"];
     var ShareArray = __dependency3__["default"];
-    var ShareStore = __dependency4__["default"];
-    var ShareUtils = __dependency5__["default"];
+    var Store = __dependency4__["default"];
+    var Utils = __dependency5__["default"];
 
-    __exports__["default"] = {
-      ShareTextMixin: ShareTextMixin,
-      ShareProxy: ShareProxy,
-      ShareArray: ShareArray,
-      ShareStore: ShareStore,
-      ShareUtils: ShareUtils
-    };
+    __exports__.ShareTextMixin = ShareTextMixin;
+    __exports__.ShareProxy = ShareProxy;
+    __exports__.ShareArray = ShareArray;
+    __exports__.Store = Store;
+    __exports__.Utils = Utils;
   });
 define("ember-share/mixins/share-text", 
   ["../utils","exports"],
@@ -372,15 +370,16 @@ define("ember-share/store",
     __exports__["default"] = Ember.Object.extend({
       socket: null,
       connection: null,
+      url : 'http://'+window.location.hostname,
       init: function () {
         if(window.BCSocket)
         {
-          this.socket = new BCSocket('http://'+window.location.hostname+':7007/channel', {reconnect: true});
+          this.socket = new BCSocket(this.url, {reconnect: true});
         }
         else if(window.Primus)
         {
           patchShare();
-          this.socket = new Primus('http://'+window.location.hostname+':7007/primus');
+          this.socket = new Primus(this.url);
         }
         this.connection = new sharejs.Connection(this.socket);
         this.cache = {};

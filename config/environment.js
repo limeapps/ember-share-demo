@@ -8,11 +8,11 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-
+    ENV.port = '7007';
   }
 
   if (environment === 'production') {
-
+    ENV.port = '80';
   }
 
   return JSON.stringify(ENV); // Set in index.html

@@ -1,6 +1,10 @@
 import Resolver from 'ember/resolver';
 import Store from 'ember-share/store';
 
+Store.reopen({
+  url : 'http://'+window.location.hostname+':'+ENV.port+'/primus'
+});
+
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
 var App = Ember.Application.extend({
